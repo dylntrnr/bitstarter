@@ -93,6 +93,10 @@ body .primary-button {
     background: #eee;
     text-align: center;
 }
+
+.bigwords {
+    margin: 3em;
+}
     .splash .splash-head {
         font-size: 300%;
         margin: 0em 0;
