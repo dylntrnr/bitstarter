@@ -48,7 +48,7 @@ body {
     background-color: #343434;
     text-align: center;
     margin: 1em auto 0;
-    padding: 2em 0.5em;
+    padding: 1.8em;
 }
 
 .actions h3, .actions p {
@@ -75,12 +75,12 @@ button {
     padding: 0.5em;
 }
 
-    .header .pure-menu li a:hover,
-    .header .pure-menu li a:focus {
-        background: none;
-        border: none;
-        color: #aaa;
-    }
+.header .pure-menu li a:hover,
+.header .pure-menu li a:focus {
+    background: none;
+    border: none;
+    color: #aaa;
+}
 
 body .primary-button {
     background: #02a6eb;
@@ -89,14 +89,12 @@ body .primary-button {
 
 .splash {
     //margin: 2em auto 0;
-    padding: 3em 0.5em;
+    padding: 2em;
     background: #eee;
     text-align: center;
 }
 
-.bigwords {
-    margin: 3em;
-}
+
 .splash .splash-head {
     font-size: 300%;
     margin: 0em 0;
