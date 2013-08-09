@@ -1,144 +1,232 @@
-@media (min-width: 980px) {
-    .linediv-l {
-        border-right: 1px white solid;
-    }
-
-    .linediv-r {
-        border-right: 1px white solid;
-    }
-}
-
-@media (max-width: 700px) {
-    .linediv-l {
-        border-bottom: 1px white solid;
-    }
-
-    .linediv-r {
-        border-top: 1px white solid;
-    }
-}
-
-.progress {
-    -moz-box-shadow: none !important;
-    -webkit-box-shadow: none !important;
-    box-shadow: none !important;
-    -webkit-border-radius: 0px !important;
-    -moz-border-radius: 0px !important;
-    border-radius: 0px !important;
-    border-collapse: collapse !important;
-    background-image: none !important;
-}
-
-* {
--webkit-box-sizing: border-box;
--moz-box-sizing: border-box;
-box-sizing: border-box;
-}
-
+ /*
+ * -- BASE STYLES --
+ * Most of these are inherited from Base, but I want to change a few.
+ */
 body {
-    margin: 0 auto;
-    line-height: 1.7em;
+    color: #526066;
 }
 
-.l-box {
-    padding: 1em;
-}
-
-.actions {
-    background-color: #343434;
-    text-align: center;
-    margin: 1em auto 0;
-    padding: 1.8em;
-}
-
-.actions h3, .actions p {
-    color: white;
+h2, h3 {
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
 p {
-    font-size: 18px;
-    line-height: 24px;
+    line-height: 1.6em;
 }
 
-.progress {
-    margin-top: 1em;
+
+/*
+ * -- Layout Styles --
+ */
+.l-content {
+    margin: 0 auto;
 }
 
-button {
-    margin-left: .5em;
-}
-.header {
-    margin: 0 0;
+.l-box {
+    padding: 0.5em 2em;
 }
 
-.header .pure-menu {
-    padding: 0.5em;
+/*
+ * -- MENU STYLES --
+ * Make the menu have a very faint box-shadow.
+ */
+.pure-menu {
+    box-shadow: 0 1px 1px rgba(0,0,0, 0.10);
 }
 
-.header .pure-menu li a:hover,
-.header .pure-menu li a:focus {
-    background: none;
-    border: none;
-    color: #aaa;
+
+/*
+ * -- BANNER --
+ * The top banner with the headings. By using a combination
+ * of `display: table;` and `display: table-cell;`, we can
+ * vertically center the text.
+ */
+.banner {
+    background: transparent url('/images/cellphone.png') 0 0 no-repeat fixed;
+    text-align: center;
+    background-size: cover;
+    height: 350px;
+    width: 100%;
+    margin-bottom: 3em;
+    display: table;
 }
 
-body .primary-button {
-    background: #02a6eb;
+    .banner-head {
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0;
+        font-size: 4em;
+        color: white;
+        font-weight: 500;
+        text-shadow: 0 1px 1px black;
+    }
+
+    .banner-sub-head {
+        display: table-cell;
+        vertical-align: middle;
+        margin-bottom: 0;
+        font-size: 1em;
+        color: rgb(0, 214, 255);
+        font-weight: 500;
+        text-shadow: 0 1px 1px black;
+    }
+
+
+/*
+ * -- PRICING TABLE WRAPPER --
+ * This element wraps up all the pricing table elements
+ */
+ .pricing-tables,
+ .information {
+    max-width: 980px;
+    margin: 0 auto;
+ }
+.pricing-tables {
+    margin-bottom: 3.125em;
+    text-align: center;
+}
+
+/*
+ * -- PRICING TABLE  --
+ * Every pricing table has the .pricing-table class
+ */
+.pricing-table {
+    border: 1px solid #ddd;
+    margin: 0 0.5em;
+    padding: 0 0 3em;
+}
+
+/*
+ * -- PRICING TABLE HEADER COLORS --
+ * Choose a different color based on the type of pricing table.
+ */
+.pricing-table-free .pricing-table-header {
+    background: #519251;
+}
+
+.pricing-table-biz .pricing-table-header {
+    background: #2c4985;
+}
+
+/*
+ * -- PRICING TABLE HEADER --
+ * By default, a header is black/white, and has some styles for its <h2> name.
+ */
+.pricing-table-header {
+    background: #111;
     color: #fff;
 }
+    .pricing-table-header h2 {
+        margin: 0;
+        padding-top: 2em;
+        font-size: 1em;
+        font-weight: normal;
 
-.splash {
-    //margin: 2em auto 0;
-    padding: 2em;
-    background: #eee;
-    text-align: center;
+    }
+
+
+/*
+ * -- PRICING TABLE PRICE --
+ * Styles for the price and the corresponding <span>per month</span>
+ */
+.pricing-table-price {
+    font-size: 6em;
+    margin: 0.2em 0 0;
+    font-weight: 100;
 }
+    .pricing-table-price span {
+        display: block;
+        text-transform: uppercase;
+        font-size: 0.2em;
+        padding-bottom: 2em;
+        font-weight: 400;
+        color: rgba(255, 255, 255, 0.5);
+        *color: #fff;
+    }
 
 
-.splash .splash-head {
-    font-size: 300%;
-    margin: 0em 0;
-    line-height: 1.2em;
-}
-.splash .splash-subhead {
-    color: #999;
-    font-weight: 300;
-    line-height: 1.4em;
-}
-.splash .primary-button {
-    font-size: 150%;
-}
 
-
-.content .content-subhead {
-    color: #999;
-    padding-bottom: 0.3em;
-    text-transform: uppercase;
+/*
+ * -- PRICING TABLE LIST --
+ * Each pricing table has a <ul> which is denoted by the .pricing-table-list class
+ */
+.pricing-table-list {
+    list-style-type: none;
     margin: 0;
-    border-bottom: 2px solid #eee;
-    display: inline-block;
-}
-
-.content .content-ribbon {
-    margin: 3em;
-    border-bottom: 1px solid #eee;
-}
-
-.ribbon {
-    background: #eee;
+    padding: 0;
     text-align: center;
-    padding: 2em;
-    color: #999;
 }
-.ribbon h2 {
-    display: inline;
-    font-weight: normal;
+
+
+/*
+ * -- PRICING TABLE LIST ELEMENTS --
+ * Styles for the individual list elements within each pricing table
+ */
+.pricing-table-list li {
+    padding: 0.8em 0;
+    background: #f7f7f7;
+    border-bottom: 1px solid #e7e7e7;
+}
+
+
+/*
+ * -- PRICING TABLE BUTTON --
+ * Styles for the "Choose" button at the bottom of a pricing table.
+ * This inherits from Pure Button.
+ */
+.button-choose {
+    border: 1px solid #ccc;
+    background: #fff;
+    color: #333;
+    border-radius: 2em;
+    font-weight: bold;
+    position: relative;
+    bottom: -1.5em;
+}
+
+.information-head {
+    color: black;
+    font-weight: 500;
 }
 
 .footer {
-    background: #111;
-    color: #666;
+    background: black;
+    color: #888;
     text-align: center;
-    padding: 1em;
-    font-size: 80%;
+}
+    .footer a {
+        color: #ddd;
+    }
+
+
+
+/*
+ * -- TABLET MEDIA QUERIES --
+ * On tablets, we want to slightly adjust the size of the banner
+ * text and add some vertical space between the various pricing tables
+ */
+@media(max-width: 767px) {
+
+    .banner-head {
+        font-size: 3em;
+    }
+    .pricing-table {
+        margin-bottom: 2em;
+    }
+
+}
+
+/*
+ * -- PHONE MEDIA QUERIES --
+ * On phones, we want to reduce the height and font-size of the banner further
+ */
+@media (max-width: 480px) {
+    .banner {
+        height: 200px;
+    }
+    .banner-head {
+        font-size: 2em;
+    }
 }
