@@ -176,7 +176,7 @@ p {
  * Styles for the "Choose" button at the bottom of a pricing table.
  * This inherits from Pure Button.
  */
-.button-choose {
+.button-donate {
     border: 1px solid #ccc;
     background: #fff;
     color: #333;
