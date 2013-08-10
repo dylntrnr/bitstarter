@@ -177,11 +177,6 @@ p {
  * This inherits from Pure Button.
  */
 .button-donate {
-    border: 1px solid #ccc;
-    background: #fff;
-    color: #333;
-    border-radius: 2em;
-    font-weight: bold;
     position: relative;
     bottom: -1.5em;
 }
